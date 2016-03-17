@@ -1,0 +1,17 @@
+{
+  "name": "business",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mojtaba Ghavidel",
+  "license": "ISC",
+  "dependencies": {
+    "couchbase": "^2.1.4",
+    "hapi": "^13.2.1",
+    "odme": "^1.1.2",
+    "puffer": "^1.1.0"
+  }
+}
