@@ -31,6 +31,7 @@ server.route
 
 class Business extends BaseModel
       source: db
+   PREFIX: true
    props:
     user: true
     pass: true
@@ -39,10 +40,22 @@ class Business extends BaseModel
     address: true
     tell: true
     about: true
+    
+  _key: (id) -> 
+    console.log "111111111"
+    id ||= ShortID.generate()
+    if @PREFIX == false
+      "mojtaba"
+    else
+      "mojtaba"
 
 
+console.log "22222222"
+business = new Business { user: 'buffet' , pass: 'stock' , email: 'buffet@gmail.com', address: 'Block 4, Wall st, NY, USA' }
 
-#business = new Business { user: 'buffet' , pass: 'stock'   , email: 'buffet@gmail.com', address: 'Block 4, Wall st, NY, USA'}
+console.log business
+
+
 
 
 
@@ -53,7 +66,7 @@ CREATE
 
 
 #save to couhbase // comment kardam ke instance durust nakune
-business.create(true).then (result) -> console.log result
+#business.create(true).then (result) -> console.log result
 
 
 

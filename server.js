@@ -58,6 +58,7 @@
   })(BaseModel);
 
   ({
+    PREFIX: true,
     props: {
       user: true,
       pass: true,
@@ -66,8 +67,19 @@
       address: true,
       tell: true,
       about: true
+    },
+    _key: function(id) {
+      console.log("111111111");
+      id || (id = ShortID.generate());
+      if (this.PREFIX === false) {
+        return "mojtaba";
+      } else {
+        return "mojtaba";
+      }
     }
   });
+
+  console.log("22222222");
 
   business = new Business({
     user: 'buffet',
@@ -76,14 +88,12 @@
     address: 'Block 4, Wall st, NY, USA'
   });
 
+  console.log(business);
+
 
   /*
   CREATE
    */
-
-  business.create(true).then(function(result) {
-    return console.log(result);
-  });
 
 
   /*
