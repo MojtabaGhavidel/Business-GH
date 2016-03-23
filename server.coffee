@@ -3,6 +3,7 @@ server = new Hapi.Server()
 console.log 'config check shavad'
 config = require("./config")
 CB = require 'couchbase'
+ShortID = require 'shortid'
 
 
 #CB modeling
@@ -27,12 +28,12 @@ server.route
 
 
 
-
+variable = "mojtabaghavidel@gmail.com"
 
 class Business extends BaseModel
-      source: db
-   PREFIX: true
-   props:
+  source: db
+  PREFIX: true
+  props:
     user: true
     pass: true
     name: true
@@ -47,7 +48,7 @@ class Business extends BaseModel
     if @PREFIX == false
       "mojtaba"
     else
-      "mojtaba"
+      variable
 
 
 console.log "22222222"
@@ -66,7 +67,7 @@ CREATE
 
 
 #save to couhbase // comment kardam ke instance durust nakune
-#business.create(true).then (result) -> console.log result
+business.create(true).then (result) -> console.log result
 
 
 
